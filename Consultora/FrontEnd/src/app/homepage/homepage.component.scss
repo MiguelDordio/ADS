@@ -1,0 +1,356 @@
+nav {
+  width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#menu {
+  padding-left: 0px;  /*espaco a esquerda */
+  padding-right: 0px;
+  list-style-type: none;
+  align-items: center;
+  /*width: 89%; /* tamanho do bloco do menu (tamanho do ecra na horizontal) */
+}
+      
+ul#menu li {
+  display: inline-block; /* coloca a lista em modo de linha (em vez dos elementos estarem seguidos na vertical ficam na horizontal)*/
+  font-size: 10pt; /* tamanho do texto */
+  font-family: Arial, Helvetica, sans-serif; /* tipo de letra */
+  padding: 12px 15px 12px 20px; /* aumenta espaaco entre as letras e a parte de fora, espaco a direita, eapaco para baixo, espaco a esquerda */
+  text-decoration: none;
+  color: #FFF; /* cor do texto */
+  background: black;
+  align-items: center;
+  
+}
+
+ul#menu li:hover { /* passagem do rato pelos elementos */
+  /*color : green;*/ /* texto muda de cor ao passar o rato */
+  background:#2e7ccb;
+  align-items: center;
+}
+
+/****/
+
+.font1 {
+  font-family: AlexBrush-Regular, cursive;
+  animation-name: cor;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes cor {
+  0% {
+      color: rgb(241, 238, 4);
+  }
+  100% {
+      color: rgb(0, 0, 0);
+  }
+}
+
+/****/
+
+div#solucao {
+  background: #FFFFFF;
+  margin-top:30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+    text-align: center;
+    opacity: 0.85;
+  }
+
+div#problemas {
+background: #FFFFFF;
+margin-top:30px;
+margin-bottom:30px;
+padding-bottom: 50px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+  text-align: center;
+  opacity: 0.85;
+}
+
+div#homePage {
+  background: #FFFFFF;
+  margin-top:450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+    text-align: center;
+    opacity: 0;
+  }
+
+
+div#aboutUs {
+background: #FFFFFF;
+margin-top:30px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+  text-align: center;
+  opacity: 0.95;
+}
+
+div#tabelaProblemas th {
+  padding-right: 20px;
+  margin-left: 200px;
+    margin-left: auto;
+margin-right: auto;
+  align-items: center;
+  text-align: center;
+
+}
+
+input[type="button"] { /*todos os elementos tipo button*/
+  backgrounD: #2e7ccb ; 
+  color:white; 
+  width: 90px; 
+  height: 30px
+}
+
+
+.center {
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 150%;
+}
+
+.center2 {
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 290px; 
+height: 30px;
+width: 150%;
+}
+
+
+
+
+
+
+body { /*não apagar*/
+height: 80%;
+  background-image: url("https://images.pexels.com/photos/136419/pexels-photo-136419.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-size: cover;
+  display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+font-family: Lato;
+}
+nav {
+opacity: 0.75;
+}
+.navbar>.container .navbar-brand-centered, .navbar>.container-fluid .navbar-brand-centered {
+margin-left: 0px;
+}
+#brand_link {
+text-decoration: none;
+color: #777;
+}
+#brand_link:hover {
+color: #333;
+}
+#intro {
+background-image: url("https://s-media-cache-ak0.pinimg.com/736x/91/dc/85/91dc854720b7fb525966d222677986c5.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: 0px -30px;
+padding-top: 40px;
+height: 100vh;
+}
+#about {
+background-image: url("http://thenextweb.com/wp-content/blogs.dir/1/files/2013/11/success.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: 0px -60px;  
+height: 111vh;
+padding-top: 40px;
+
+}
+#portfolio {
+background-image: url("http://cdn.blessthisstuff.com/imagens/stuff/field-theories-leather-portfolios-2.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: 0px -60px;
+color: #FFFFCC;
+height: 105vh;
+padding-top: 50px;
+}
+#spacer {
+height: 30px;
+}
+.hover {
+opacity: 1;
+-webkit-transition: .3s ease-in-out;
+transition: .3s ease-in-out;
+}
+.hover:hover {
+opacity: .5;
+}
+#contact {
+background-image: url("https://ay201b.files.wordpress.com/2013/04/cassiopeia_a_spitzer_crop.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: -150px -20px;
+height: 160vh;
+padding-top: 50px;
+color: #fff;
+}
+
+.red{
+  color:red;
+  }
+.form-area
+{
+background-color: #FAFAFA;
+opacity: 0.8;
+padding: 10px 40px 60px;
+margin: 60px 0px 60px;
+border: 1px solid GREY;
+}
+
+
+footer {
+background: #2e7ccb; 
+color: #FFFFFF;
+font-size: 12px;
+bottom: 0;
+position: fixed;
+left: 0;
+right: 0;
+text-align: center;
+z-index: 2;
+}
+
+footer p {
+margin: 10px 0;
+}
+
+footer a {
+color: #000000;
+font-weight: bold;
+text-decoration: none;
+}
+
+/* about us */
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+margin: 0;
+}
+
+html {
+box-sizing: border-box;
+}
+
+*, *:before, *:after {
+box-sizing: inherit;
+}
+
+.column {
+float: left;
+width: 25%;
+margin-bottom: 16px;
+padding: 0 8px;
+}
+
+.card {
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+margin: 8px;
+}
+
+.about-section {
+padding: 50px;
+text-align: center;
+background-color: #474e5d;
+color: white;
+}
+
+.container {
+padding: 0 16px;
+}
+
+.container::after, .row::after {
+content: "";
+clear: both;
+display: table;
+}
+
+.title {
+color: grey;
+}
+
+.button {
+border: none;
+outline: 0;
+display: inline-block;
+padding: 8px;
+color: white;
+background-color: #000;
+text-align: center;
+cursor: pointer;
+width: 100%;
+}
+
+.button:hover {
+background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+.column {
+  width: 100%;
+  display: block;
+}
+}
+
+/* TABELA */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background: #2e7ccb; 
+  color: white;
+}
+
+.sem-solucao-container {
+  margin-top: 150px;
+  margin-bottom: 150px;
+  background-color: #337AB7;
+  padding: 10px 20px;
+
+  p {
+    color: #fff;
+    font-size: large;
+    font-family: Lato !important;
+  }
+}
+
+.add-delete-btn {
+  width: 70px; 
+  height: 25px; 
+  margin: 5px;
+
+  .solucao {
+    width: auto !important;
+  }
+}

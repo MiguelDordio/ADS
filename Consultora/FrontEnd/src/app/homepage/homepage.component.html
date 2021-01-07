@@ -1,0 +1,164 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body>
+
+
+
+    <div class="homepage-container">
+        <!-- Navigation Bar -->
+        <app-nav-bar (screenChanged)="screenChangedEvent($event)"></app-nav-bar>
+
+        <div *ngIf="!aboutUs && !solucao && !problema" class="homepage" id="homePage"></div>
+
+     <div *ngIf="aboutUs" id= "aboutUs" >
+            <h2 style="text-align:center"> </h2>
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <h3>Alexandre Rodrigues</h3>
+                        <img src="https://scontent.fopo3-1.fna.fbcdn.net/v/t31.0-8/12983817_1096749773711322_4531138343100545798_o.jpg?_nc_cat=101&ccb=2&_nc_sid=174925&_nc_ohc=Lenwskg0rsUAX_G9UQS&_nc_ht=scontent.fopo3-1.fna&oh=7cfeec19bc0764a6507da56ef580ef6f&oe=601C68E8" alt="Alexandre Rodrigues" style="width:50%">
+                        <p class="title">Engenheiro Naval - Ramo de Armas e Eletrónica</p>
+                        <p> Chefe de serviço de Armas e Eletrónica, NRP Viana do Castelo. Chefe de serviço de Manutenção e Desenvolvimento do Centro de Instrumentação Marítima, Instituto Hidrográfico. </p>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <h3>Bruno Costa</h3>
+                        <img src="https://media-exp1.licdn.com/dms/image/C4E03AQH0uXSpWlPmmg/profile-displayphoto-shrink_800_800/0/1559588592511?e=1615420800&v=beta&t=eyOSqmbmp4TJMeBI_UT2OfDcAcQnAoyrAIM2J5WlY0g" alt="Bruno Costa" style="width:50%">
+                        <p class="title">Engenheiro Informático</p>
+                        <p> Analista de Segurança de Informação na Santa Casa de Misericórdia de Lisboa.</p>
+                        <h1></h1>
+                        <b> <a target="_blank" href="https://www.linkedin.com/in/bruno-costa-0764b2149/">LinkedIn</a></b>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <h3>Micaela Fonseca</h3>
+                        <img src="https://nes-isep.pt/images/Alumni/micaela.jpg" alt="Micaela Fonseca" style="width:50%">
+                        <p class="title">Engenheira de Sistemas</p>
+                        <p>Desempenhou funções de Business Intelligence e Software Developer na EDP Produção e Caixa Geral de Depósitos.</p>
+                        <h1></h1>
+                        <b> <a target="_blank" href="https://www.linkedin.com/in/micaelamffonseca/">LinkedIn</a></b>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <h3>Miguel Oliveira</h3>
+                        <img src="https://media-exp1.licdn.com/dms/image/C4D03AQGK6aWRCQ9_WA/profile-displayphoto-shrink_800_800/0/1596034098933?e=1615420800&v=beta&t=IdNEk11k7v89M2-OdPccG4Cy2BI1L6l1qMs-L_edbxQ" alt="Miguel Oliveira" style="width:50%">
+                        <p class="title">Engenheiro Informático</p>
+                        <p>Consultor da Altran, com atual participação no desenvolvimento de apps da Caixa Geral de Depósitos.</p>
+                        <h1></h1>
+                        <b> <a target="_blank" href="https://www.linkedin.com/in/miguel-oliveira-8a9764135/">LinkedIn</a></b>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SOLUTION -->
+        <div *ngIf="solucao" id="solucao">
+            <div *ngIf="semSolucao && !solucaoAceite">
+                <div class="sem-solucao-container">
+                    <p>Ainda sem soluções geradas.<br>
+                        Para que uma solução seja gerada apresente um problema na aba problema
+                    </p>
+                    <button (click)="screenChangedEvent(2)">Criar Problema</button>
+                </div>
+            </div>
+            <div *ngIf="!semSolucao && !solucaoAceite">
+                <button class="add-delete-btn solucao" (click)="aceitarSolucao()">Aceitar Solução</button>
+                <button class="add-delete-btn solucao" (click)="criarNovoProblema()">Criar novo problema</button>
+                <br /> <br /> 
+                <label>Objetivos</label>
+                <div style="display: flex; justify-content: center;" *ngFor="let evaluations of solutionsOutput.evaluations">
+                    <div style="margin:0 5px" *ngFor="let evaluation of evaluations">
+                        <p>{{ evaluation }}</p>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="!semSolucao && solucaoAceite">
+                <button class="add-delete-btn solucao" (click)="criarNovoProblema()">Criar novo problema</button>
+                <br /> <br /> 
+                <div style="column-count: 2;">
+                    <label>Variáveis</label>
+                    <div style="display: flex; justify-content: center;" *ngFor="let solutions of solutionsOutput.solutions">
+                        <div style="margin:0 5px" *ngFor="let solution of solutions">
+                            <p>{{ solution }}</p>
+                        </div>
+                    </div>
+        
+                    <label>Objetivos</label>
+                    <div style="display: flex; justify-content: center;" *ngFor="let evaluations of solutionsOutput.evaluations">
+                        <div style="margin:0 5px" *ngFor="let evaluation of evaluations">
+                            <p>{{ evaluation }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROBLEMA -->
+        <div *ngIf="problema" id="problemas">
+            <div id="tabelaProblemas">
+                <table id="tableProblemas" width=auto align="center">
+                    <br /><br />
+                    <tr>
+                        <th style="color: #FFFFFF;" class="text-center" width="50">Select</th>
+                        <th style="color: #FFFFFF;" class="text-center">ID</th>
+                        <th style="color: #FFFFFF;" class="text-center">Limite Minimo</th>
+                        <th style="color: #FFFFFF;" class="text-center">Limite Maximo</th>
+                    </tr>
+                </table>
+                <br /> 
+                <button class="add-delete-btn" (click)="gravarProblema()">
+                    Add
+                </button>
+                <button class="add-delete-btn" (click)="removerProblema()">
+                    Delete
+                </button>
+            </div>
+
+            <!-- Form Adicionar Problema -->
+            <div *ngIf="isEditMode" id="adicionar">
+                <br /> <br />
+                <form id="formAdicionar" >
+                    <!-- Objetivos -->
+                    <div *ngIf="!temObjetivos">
+                        <strong>Introduza o número de objetivos:</strong>
+                        <br />
+                        <input type="text" name="numberOfObjectives" [(ngModel)]="numberOfObjectives" placeholder="Número de objetivos"/>
+                        <br /> <br /> 
+                    </div>
+
+                    <!-- Limite Inferior -->
+                    <strong>Introduza o limite minimo:</strong>
+                    <br />
+                    <input type="text" id="lowerLimit" name="lowerLimit" [(ngModel)]="lowerLimit" placeholder="Limite Inferior"/>
+                    <br /> <br /> 
+
+                    <!-- Limite superior -->
+                    <strong>Introduza o limite máximo:</strong>
+                    <br />
+                    <input type="text" id="upperLimit" name="upperLimit" [(ngModel)]="upperLimit" placeholder="Limite superior"/>
+                    <br /> <br /> 
+
+                    <button (click)="gerarSolucao()">
+                        Gerar Solução
+                    </button>
+                    </form>
+                    <br /><br /> 
+            </div>
+
+            <div *ngIf="!isEditMode">
+                Solução a ser gerada. Por favor aguarde.
+            </div>
+        </div>
+    </div>
+</body>
+
+<app-bottom-footer></app-bottom-footer>
